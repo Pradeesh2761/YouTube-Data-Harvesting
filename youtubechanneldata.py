@@ -17,6 +17,7 @@ def Api_conn():
 youtube = Api_conn()
 
 
+
 #get channel info:
 def get_channel_info(channel_id):
     request = youtube.channels().list(
@@ -506,7 +507,7 @@ if st.button("Collect the Data"):
         ch_ids.append(ch_data["channel_information"]["Channel_id"])
 
     if channel_ids in ch_ids:
-        st.Success("Given Channel id was already exist")
+        st.success("Given Channel id was already exist")
     else:
         insert = channels_detail(channel_ids)
         st.success(insert)
@@ -649,4 +650,4 @@ elif Quest == "10. Which videos have the highest number of comments, and what ar
     st.write(dataf10)
 
 
-    
+    #streamlit run youtubechanneldata.py
