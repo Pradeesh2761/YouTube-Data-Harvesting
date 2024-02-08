@@ -240,10 +240,10 @@ def playlist_table():
     cursor.execute(drop)
     mydb.commit()
 
-    create_query = '''Create table if not exists channels_playlist(playlist_id varchar(100) primary key,
-                                                                Title varchar(80),
-                                                                Channel_id varchar(80),
-                                                                Channel_name varchar(80),
+    create_query = '''Create table if not exists channels_playlist(playlist_id varchar(255) primary key,
+                                                                Title varchar(255),
+                                                                Channel_id varchar(255),
+                                                                Channel_name varchar(255),
                                                                 Piblished_date timestamp,
                                                                 video_count int
                                                                 )'''
@@ -485,10 +485,11 @@ def show_comments_table():
     df3 = st.dataframe(com_list)
     return df3
 
-# streamlite part :
+# streamlite :
+st.title(':red[WEL]COME! :wave:')
 
 with st.sidebar:
-     st.title(":red[YOUTUBE] DATA HARVESTING AND WAREHOUSING")
+     st.title(":red[YOU]TUBE DATA HARVESTING AND WAREHOUSING")
      st.header("skill Take Away", divider='red')
      st.caption("Python Scripting")
      st.caption("Data Collection")
@@ -499,7 +500,7 @@ with st.sidebar:
 
 channel_ids = st.text_input("Enter the channel ID ")
 
-if st.button("Collect the Data"):
+if st.button("Get the Data"):
     ch_ids = []
     db = client["youtube_data"]
     coll1 = db["channel_details"]
